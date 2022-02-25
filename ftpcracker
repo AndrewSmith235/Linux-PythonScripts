@@ -21,7 +21,9 @@ try:
 						try:
 							ftp = ftplib.FTP(server)
 							ftp.login(user, word)
-							print('Success! The password is ' + word)						except:							print('still trying…')
+							print('Success! The password is ' + word)
+						except:
+					print('still trying…')
 			except:
 				print('trying different username')
 except:
