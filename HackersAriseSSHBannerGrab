@@ -1,0 +1,22 @@
+#! /usr/bin/python3
+
+import socket
+
+Ports = [21,22,25,3306]
+
+IPInput = input("IP address: ")
+
+
+try:
+	for i in range (0,4):
+
+		s = socket.socket()
+		Port = Ports[i]
+		print ('This Is the Banner for the Port')
+		print (Ports)
+		s.connect ((IPInput, Port))
+		answer = s.recv (1024)
+		print (answer)
+		s.close ()
+except:
+	print('no answer')
